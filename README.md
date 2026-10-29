@@ -1,228 +1,142 @@
-# Open WebUI 👋
-
-![GitHub stars](https://img.shields.io/github/stars/open-webui/open-webui?style=social)
-![GitHub forks](https://img.shields.io/github/forks/open-webui/open-webui?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/open-webui/open-webui?style=social)
-![GitHub repo size](https://img.shields.io/github/repo-size/open-webui/open-webui)
-![GitHub language count](https://img.shields.io/github/languages/count/open-webui/open-webui)
-![GitHub top language](https://img.shields.io/github/languages/top/open-webui/open-webui)
-![GitHub last commit](https://img.shields.io/github/last-commit/open-webui/open-webui?color=red)
-![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Follama-webui%2Follama-wbui&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)
-[![Discord](https://img.shields.io/badge/Discord-Open_WebUI-blue?logo=discord&logoColor=white)](https://discord.gg/5rJgQTnV4s)
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/tjbck)
-
-**Open WebUI is an [extensible](https://docs.openwebui.com/features/plugin/), feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline.** It supports various LLM runners like **Ollama** and **OpenAI-compatible APIs**, with **built-in inference engine** for RAG, making it a **powerful AI deployment solution**.
-
-![Open WebUI Demo](./demo.gif)
-
-> [!TIP]  
-> **Looking for an [Enterprise Plan](https://docs.openwebui.com/enterprise)?** – **[Speak with Our Sales Team Today!](mailto:sales@openwebui.com)**
->
-> Get **enhanced capabilities**, including **custom theming and branding**, **Service Level Agreement (SLA) support**, **Long-Term Support (LTS) versions**, and **more!**
-
-For more information, be sure to check out our [Open WebUI Documentation](https://docs.openwebui.com/).
-
-## Key Features of Open WebUI ⭐
-
-- 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes (kubectl, kustomize or helm) for a hassle-free experience with support for both `:ollama` and `:cuda` tagged images.
-
-- 🤝 **Ollama/OpenAI API Integration**: Effortlessly integrate OpenAI-compatible APIs for versatile conversations alongside Ollama models. Customize the OpenAI API URL to link with **LMStudio, GroqCloud, Mistral, OpenRouter, and more**.
-
-- 🛡️ **Granular Permissions and User Groups**: By allowing administrators to create detailed user roles and permissions, we ensure a secure user environment. This granularity not only enhances security but also allows for customized user experiences, fostering a sense of ownership and responsibility amongst users.
-
-- 📱 **Responsive Design**: Enjoy a seamless experience across Desktop PC, Laptop, and Mobile devices.
-
-- 📱 **Progressive Web App (PWA) for Mobile**: Enjoy a native app-like experience on your mobile device with our PWA, providing offline access on localhost and a seamless user interface.
-
-- ✒️🔢 **Full Markdown and LaTeX Support**: Elevate your LLM experience with comprehensive Markdown and LaTeX capabilities for enriched interaction.
-
-- 🎤📹 **Hands-Free Voice/Video Call**: Experience seamless communication with integrated hands-free voice and video call features, allowing for a more dynamic and interactive chat environment.
-
-- 🛠️ **Model Builder**: Easily create Ollama models via the Web UI. Create and add custom characters/agents, customize chat elements, and import models effortlessly through [Open WebUI Community](https://openwebui.com/) integration.
-
-- 🐍 **Native Python Function Calling Tool**: Enhance your LLMs with built-in code editor support in the tools workspace. Bring Your Own Function (BYOF) by simply adding your pure Python functions, enabling seamless integration with LLMs.
-
-- 📚 **Local RAG Integration**: Dive into the future of chat interactions with groundbreaking Retrieval Augmented Generation (RAG) support. This feature seamlessly integrates document interactions into your chat experience. You can load documents directly into the chat or add files to your document library, effortlessly accessing them using the `#` command before a query.
-
-- 🔍 **Web Search for RAG**: Perform web searches using providers like `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, `serper`, `Serply`, `DuckDuckGo`, `TavilySearch`, `SearchApi` and `Bing` and inject the results directly into your chat experience.
-
-- 🌐 **Web Browsing Capability**: Seamlessly integrate websites into your chat experience using the `#` command followed by a URL. This feature allows you to incorporate web content directly into your conversations, enhancing the richness and depth of your interactions.
-
-- 🎨 **Image Generation Integration**: Seamlessly incorporate image generation capabilities using options such as AUTOMATIC1111 API or ComfyUI (local), and OpenAI's DALL-E (external), enriching your chat experience with dynamic visual content.
-
-- ⚙️ **Many Models Conversations**: Effortlessly engage with various models simultaneously, harnessing their unique strengths for optimal responses. Enhance your experience by leveraging a diverse set of models in parallel.
-
-- 🔐 **Role-Based Access Control (RBAC)**: Ensure secure access with restricted permissions; only authorized individuals can access your Ollama, and exclusive model creation/pulling rights are reserved for administrators.
-
-- 🌐🌍 **Multilingual Support**: Experience Open WebUI in your preferred language with our internationalization (i18n) support. Join us in expanding our supported languages! We're actively seeking contributors!
-
-- 🧩 **Pipelines, Open WebUI Plugin Support**: Seamlessly integrate custom logic and Python libraries into Open WebUI using [Pipelines Plugin Framework](https://github.com/open-webui/pipelines). Launch your Pipelines instance, set the OpenAI URL to the Pipelines URL, and explore endless possibilities. [Examples](https://github.com/open-webui/pipelines/tree/main/examples) include **Function Calling**, User **Rate Limiting** to control access, **Usage Monitoring** with tools like Langfuse, **Live Translation with LibreTranslate** for multilingual support, **Toxic Message Filtering** and much more.
-
-- 🌟 **Continuous Updates**: We are committed to improving Open WebUI with regular updates, fixes, and new features.
-
-Want to learn more about Open WebUI's features? Check out our [Open WebUI documentation](https://docs.openwebui.com/features) for a comprehensive overview!
-
-## 🔗 Also Check Out Open WebUI Community!
-
-Don't forget to explore our sibling project, [Open WebUI Community](https://openwebui.com/), where you can discover, download, and explore customized Modelfiles. Open WebUI Community offers a wide range of exciting possibilities for enhancing your chat interactions with Open WebUI! 🚀
-
-## How to Install 🚀
-
-### Installation via Python pip 🐍
-
-Open WebUI can be installed using pip, the Python package installer. Before proceeding, ensure you're using **Python 3.11** to avoid compatibility issues.
-
-1. **Install Open WebUI**:
-   Open your terminal and run the following command to install Open WebUI:
-
-   ```bash
-   pip install open-webui
-   ```
-
-2. **Running Open WebUI**:
-   After installation, you can start Open WebUI by executing:
-
-   ```bash
-   open-webui serve
-   ```
-
-This will start the Open WebUI server, which you can access at [http://localhost:8080](http://localhost:8080)
-
-### Quick Start with Docker 🐳
-
-> [!NOTE]  
-> Please note that for certain Docker environments, additional configurations might be needed. If you encounter any connection issues, our detailed guide on [Open WebUI Documentation](https://docs.openwebui.com/) is ready to assist you.
-
-> [!WARNING]
-> When using Docker to install Open WebUI, make sure to include the `-v open-webui:/app/backend/data` in your Docker command. This step is crucial as it ensures your database is properly mounted and prevents any loss of data.
-
-> [!TIP]  
-> If you wish to utilize Open WebUI with Ollama included or CUDA acceleration, we recommend utilizing our official images tagged with either `:cuda` or `:ollama`. To enable CUDA, you must install the [Nvidia CUDA container toolkit](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/) on your Linux/WSL system.
-
-### Installation with Default Configuration
-
-- **If Ollama is on your computer**, use this command:
-
-  ```bash
-  docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-  ```
-
-- **If Ollama is on a Different Server**, use this command:
-
-  To connect to Ollama on another server, change the `OLLAMA_BASE_URL` to the server's URL:
-
-  ```bash
-  docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-  ```
-
-- **To run Open WebUI with Nvidia GPU support**, use this command:
-
-  ```bash
-  docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
-  ```
-
-### Installation for OpenAI API Usage Only
-
-- **If you're only using OpenAI API**, use this command:
-
-  ```bash
-  docker run -d -p 3000:8080 -e OPENAI_API_KEY=your_secret_key -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-  ```
-
-### Installing Open WebUI with Bundled Ollama Support
-
-This installation method uses a single container image that bundles Open WebUI with Ollama, allowing for a streamlined setup via a single command. Choose the appropriate command based on your hardware setup:
-
-- **With GPU Support**:
-  Utilize GPU resources by running the following command:
-
-  ```bash
-  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
-  ```
-
-- **For CPU Only**:
-  If you're not using a GPU, use this command instead:
-
-  ```bash
-  docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
-  ```
-
-Both commands facilitate a built-in, hassle-free installation of both Open WebUI and Ollama, ensuring that you can get everything up and running swiftly.
-
-After installation, you can access Open WebUI at [http://localhost:3000](http://localhost:3000). Enjoy! 😄
-
-### Other Installation Methods
-
-We offer various installation alternatives, including non-Docker native installation methods, Docker Compose, Kustomize, and Helm. Visit our [Open WebUI Documentation](https://docs.openwebui.com/getting-started/) or join our [Discord community](https://discord.gg/5rJgQTnV4s) for comprehensive guidance.
-
-### Troubleshooting
-
-Encountering connection issues? Our [Open WebUI Documentation](https://docs.openwebui.com/troubleshooting/) has got you covered. For further assistance and to join our vibrant community, visit the [Open WebUI Discord](https://discord.gg/5rJgQTnV4s).
-
-#### Open WebUI: Server Connection Error
-
-If you're experiencing connection issues, it’s often due to the WebUI docker container not being able to reach the Ollama server at 127.0.0.1:11434 (host.docker.internal:11434) inside the container . Use the `--network=host` flag in your docker command to resolve this. Note that the port changes from 3000 to 8080, resulting in the link: `http://localhost:8080`.
-
-**Example Docker Command**:
-
-```bash
-docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-```
-
-### Keeping Your Docker Installation Up-to-Date
-
-In case you want to update your local Docker installation to the latest version, you can do it with [Watchtower](https://containrrr.dev/watchtower/):
-
-```bash
-docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
-```
-
-In the last part of the command, replace `open-webui` with your container name if it is different.
-
-Check our Updating Guide available in our [Open WebUI Documentation](https://docs.openwebui.com/getting-started/updating).
-
-### Using the Dev Branch 🌙
-
-> [!WARNING]
-> The `:dev` branch contains the latest unstable features and changes. Use it at your own risk as it may have bugs or incomplete features.
-
-If you want to try out the latest bleeding-edge features and are okay with occasional instability, you can use the `:dev` tag like this:
-
-```bash
-docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --add-host=host.docker.internal:host-gateway --restart always ghcr.io/open-webui/open-webui:dev
-```
-
-### Offline Mode
-
-If you are running Open WebUI in an offline environment, you can set the `HF_HUB_OFFLINE` environment variable to `1` to prevent attempts to download models from the internet.
-
-```bash
-export HF_HUB_OFFLINE=1
-```
-
-## What's Next? 🌟
-
-Discover upcoming features on our roadmap in the [Open WebUI Documentation](https://docs.openwebui.com/roadmap/).
-
-## License 📜
-
-This project is licensed under the [BSD-3-Clause License](LICENSE) - see the [LICENSE](LICENSE) file for details. 📄
-
-## Support 💬
-
-If you have any questions, suggestions, or need assistance, please open an issue or join our
-[Open WebUI Discord community](https://discord.gg/5rJgQTnV4s) to connect with us! 🤝
-
-## Star History
-
-<a href="https://star-history.com/#open-webui/open-webui&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date" />
-  </picture>
-</a>
+<p align="center">
+  <img src="branding/anti-theft-logo.png" width="120" alt="Anti-Theft logo" />
+</p>
+
+<h1 align="center">Anti-Theft WebUI</h1>
+
+<p align="center">
+  A self-hosted AI chat app, forked from <a href="https://github.com/open-webui/open-webui/tree/v0.6.5">Open WebUI v0.6.5</a>,<br/>
+  with its own branding and <b>scheduled automations</b>.
+</p>
 
 ---
 
-Created by [Timothy Jaeryang Baek](https://github.com/tjbck) - Let's make Open WebUI even more amazing together! 💪
+## What is different from Open WebUI 0.6.5
+
+| | |
+| --- | --- |
+| 🎨 **Own branding** | Every logo, favicon and splash screen is replaced. One script regenerates them all from any image. |
+| ⏰ **Scheduled automations** | Let a model run a prompt for you on a schedule: "every weekday at 8:00, summarize the news". |
+| 📜 **Permissive license** | Based on the last BSD-3-Clause release of Open WebUI. |
+
+Everything else (chat, Ollama and OpenAI-compatible models, RAG, tools, web search, channels, …) works as in
+Open WebUI 0.6.5. See the [original README](docs/UPSTREAM_README.md) for that feature list.
+
+## Scheduled automations
+
+![Automations page](docs/images/automations.jpg)
+
+- Open **Automations** in the sidebar and press **New**.
+- Give it a name, a prompt and a model.
+- Pick when it runs: **once**, **every N hours**, **daily**, **weekly** (pick the days), **monthly**, or a
+  **custom** iCalendar rule such as `FREQ=WEEKLY;BYDAY=MO,WE;INTERVAL=2`.
+- The dialog shows the next three run times before you save.
+- Optionally let each run **search the web** first.
+
+![New automation dialog](docs/images/new-automation.jpg)
+
+Each run:
+
+1. creates a normal chat in an **Automations** folder, so you can read it and keep chatting;
+2. tells the model the current date and time, and that nobody is watching live;
+3. uses the model's tools and knowledge, like a normal chat;
+4. sends you a pop-up notification, and your webhook if you are away.
+
+Every automation has **Run now**, **Edit**, **Pause/Resume** and **Delete**, plus a **run history** with the
+status of each run and a link to its chat.
+
+### How it works
+
+- A schedule is stored as an iCalendar `RRULE`, a start time and the user's IANA timezone (e.g.
+  `Europe/Amsterdam`). It is expanded in local wall-clock time, so "every day at 09:00" stays at 09:00 when the
+  clocks change for summer and winter.
+- A small scheduler inside the backend checks for due automations. It claims each due run with an atomic
+  compare-and-swap update, so with several workers on one database a run still happens only once.
+- If the server was down, missed runs are merged into one run on restart. They do not all fire at once.
+- Runs left half-finished by a restart are marked as failed.
+
+### Settings
+
+Admins can turn automations off for a group: **Admin → Users → Groups → Permissions → Features → Automations**.
+
+| Environment variable | Default | Meaning |
+| --- | --- | --- |
+| `ENABLE_AUTOMATIONS` | `True` | Turn the feature and scheduler on or off |
+| `USER_PERMISSIONS_FEATURES_AUTOMATIONS` | `True` | Default permission for normal users |
+| `AUTOMATION_MAX_COUNT` | `20` | Max automations per non-admin user |
+| `AUTOMATION_MIN_INTERVAL` | `300` | Shortest gap between two runs, in seconds |
+| `AUTOMATION_POLL_INTERVAL` | `30` | How often the scheduler checks, in seconds |
+| `AUTOMATION_MAX_CONCURRENT` | `3` | How many runs may use models at the same time |
+
+### API
+
+All endpoints are under `/api/v1/automations` and need a signed-in user.
+
+| Method | Path | What it does |
+| --- | --- | --- |
+| `GET` | `/` | List your automations, with each one's last run |
+| `POST` | `/create` | Create one |
+| `POST` | `/preview` | Check a schedule and get its next run times |
+| `GET` | `/{id}` | Get one |
+| `GET` | `/{id}/runs` | Run history (last 20) |
+| `POST` | `/{id}/update` | Change one |
+| `POST` | `/{id}/toggle` | Pause or resume |
+| `POST` | `/{id}/run` | Run now, in the background |
+| `DELETE` | `/{id}/delete` | Delete it and its history (chats are kept) |
+
+## Run it
+
+You need **Python 3.11** and **Node.js 18–22** (Node 24 is not supported by this version).
+
+```bash
+# 1. Backend dependencies
+python3.11 -m venv .venv
+.venv/bin/pip install -r backend/requirements.txt
+
+# 2. Build the web app
+npm ci
+npm run build
+
+# 3. Start (open http://localhost:8080)
+cd backend
+WEBUI_SECRET_KEY="$(openssl rand -hex 32)" ../.venv/bin/uvicorn open_webui.main:app --host 0.0.0.0 --port 8080
+```
+
+The first account you create becomes the admin. Add models under **Admin → Settings → Connections**
+(Ollama or any OpenAI-compatible API). Data is stored in `backend/data`.
+
+To open it from your phone on the same Wi-Fi, use `http://<your-computer's-IP>:8080`.
+
+### Docker
+
+The original `Dockerfile` is unchanged, so a normal build should work. It has not been tested in this fork.
+
+```bash
+docker build -t anti-theft-webui .
+docker run -d -p 3000:8080 -v anti-theft-webui:/app/backend/data --name anti-theft-webui anti-theft-webui
+```
+
+## Use your own logo
+
+```bash
+.venv/bin/pip install pillow   # if not installed
+python3 scripts/rebrand_logo.py path/to/logo.png
+# optional separate image for dark mode:
+python3 scripts/rebrand_logo.py path/to/logo.png --dark path/to/logo-dark.png
+```
+
+This writes every favicon, app icon, splash and logo file into `static/` and `backend/open_webui/static/`.
+Then rebuild with `npm run build`.
+
+## License and credits
+
+This project is based on [Open WebUI](https://github.com/open-webui/open-webui) **v0.6.5** by Timothy Jaeryang
+Baek and contributors. That release is under the **BSD-3-Clause** license, kept unchanged in [LICENSE](LICENSE).
+
+Later Open WebUI releases use a different license that forbids changing the branding (with some exceptions).
+**This fork contains no code from those later releases.** The automations feature was written from scratch,
+based only on the public description of the idea. Please keep it that way: do not copy code from Open WebUI
+releases newer than v0.6.5 into this repository. For security fixes, read the public advisory and write the
+fix yourself.
+
+The anti-theft logo belongs to the Anti-Theft Kit project.

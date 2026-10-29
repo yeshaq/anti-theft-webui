@@ -35,7 +35,8 @@
 			direct_tool_servers: false,
 			web_search: true,
 			image_generation: true,
-			code_interpreter: true
+			code_interpreter: true,
+			automations: true
 		}
 	};
 
@@ -361,6 +362,14 @@
 			</div>
 
 			<Switch bind:state={permissions.features.code_interpreter} />
+		</div>
+
+		<div class="  flex w-full justify-between my-2 pr-2">
+			<div class=" self-center text-xs font-medium">
+				{$i18n.t('Automations')}
+			</div>
+
+			<Switch bind:state={permissions.features.automations} />
 		</div>
 	</div>
 </div>

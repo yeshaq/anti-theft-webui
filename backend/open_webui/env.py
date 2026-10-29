@@ -355,6 +355,24 @@ BYPASS_MODEL_ACCESS_CONTROL = (
 )
 
 ####################################
+# AUTOMATIONS
+####################################
+
+ENABLE_AUTOMATIONS = os.environ.get("ENABLE_AUTOMATIONS", "True").lower() == "true"
+
+# Maximum number of automations a single (non-admin) user may own
+AUTOMATION_MAX_COUNT = int(os.environ.get("AUTOMATION_MAX_COUNT", "20"))
+
+# Shortest allowed gap between two runs of one automation, in seconds
+AUTOMATION_MIN_INTERVAL = int(os.environ.get("AUTOMATION_MIN_INTERVAL", "300"))
+
+# How often the scheduler looks for due automations, in seconds
+AUTOMATION_POLL_INTERVAL = int(os.environ.get("AUTOMATION_POLL_INTERVAL", "30"))
+
+# How many automation runs may talk to models at the same time
+AUTOMATION_MAX_CONCURRENT = int(os.environ.get("AUTOMATION_MAX_CONCURRENT", "3"))
+
+####################################
 # WEBUI_SECRET_KEY
 ####################################
 

@@ -64,6 +64,7 @@ from open_webui.routers import (
     channels,
     chats,
     folders,
+    automations,
     configs,
     groups,
     files,
@@ -325,6 +326,7 @@ from open_webui.config import (
 )
 from open_webui.env import (
     AUDIT_EXCLUDED_PATHS,
+    ENABLE_AUTOMATIONS,
     AUDIT_LOG_LEVEL,
     CHANGELOG,
     REDIS_URL,
@@ -361,6 +363,7 @@ from open_webui.utils.chat import (
     chat_action as chat_action_handler,
 )
 from open_webui.utils.middleware import process_chat_payload, process_chat_response
+from open_webui.utils.automations import automation_scheduler
 from open_webui.utils.access_control import has_access
 
 from open_webui.utils.auth import (
@@ -433,6 +436,10 @@ async def lifespan(app: FastAPI):
         get_license_data(app, LICENSE_KEY)
 
     asyncio.create_task(periodic_usage_pool_cleanup())
+
+    if ENABLE_AUTOMATIONS:
+        asyncio.create_task(automation_scheduler(app))
+
     yield
 
 
@@ -963,6 +970,9 @@ app.include_router(tools.router, prefix="/api/v1/tools", tags=["tools"])
 
 app.include_router(memories.router, prefix="/api/v1/memories", tags=["memories"])
 app.include_router(folders.router, prefix="/api/v1/folders", tags=["folders"])
+app.include_router(
+    automations.router, prefix="/api/v1/automations", tags=["automations"]
+)
 app.include_router(groups.router, prefix="/api/v1/groups", tags=["groups"])
 app.include_router(files.router, prefix="/api/v1/files", tags=["files"])
 app.include_router(functions.router, prefix="/api/v1/functions", tags=["functions"])
@@ -1283,6 +1293,7 @@ async def get_app_config(request: Request):
                 {
                     "enable_direct_connections": app.state.config.ENABLE_DIRECT_CONNECTIONS,
                     "enable_channels": app.state.config.ENABLE_CHANNELS,
+                    "enable_automations": ENABLE_AUTOMATIONS,
                     "enable_web_search": app.state.config.ENABLE_WEB_SEARCH,
                     "enable_code_execution": app.state.config.ENABLE_CODE_EXECUTION,
                     "enable_code_interpreter": app.state.config.ENABLE_CODE_INTERPRETER,

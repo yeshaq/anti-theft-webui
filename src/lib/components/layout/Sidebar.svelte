@@ -58,6 +58,7 @@
 	import ChannelItem from './Sidebar/ChannelItem.svelte';
 	import PencilSquare from '../icons/PencilSquare.svelte';
 	import Home from '../icons/Home.svelte';
+	import Clock from '../icons/Clock.svelte';
 
 	const BREAKPOINT = 768;
 
@@ -604,6 +605,34 @@
 
 					<div class="flex self-center translate-y-[0.5px]">
 						<div class=" self-center font-medium text-sm font-primary">{$i18n.t('Workspace')}</div>
+					</div>
+				</a>
+			</div>
+		{/if}
+
+		{#if ($config?.features?.enable_automations ?? false) && ($user?.role === 'admin' || ($user?.permissions?.features?.automations ?? true))}
+			<div class="px-1.5 flex justify-center text-gray-800 dark:text-gray-200">
+				<a
+					class="grow flex items-center space-x-3 rounded-lg px-2 py-[7px] hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+					href="/automations"
+					on:click={() => {
+						selectedChatId = null;
+						chatId.set('');
+
+						if ($mobile) {
+							showSidebar.set(false);
+						}
+					}}
+					draggable="false"
+				>
+					<div class="self-center">
+						<Clock strokeWidth="2" className="size-[1.1rem]" />
+					</div>
+
+					<div class="flex self-center translate-y-[0.5px]">
+						<div class=" self-center font-medium text-sm font-primary">
+							{$i18n.t('Automations')}
+						</div>
 					</div>
 				</a>
 			</div>

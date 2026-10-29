@@ -76,7 +76,9 @@ def main() -> None:
             save_png(light, target / name, size)
         for name, size in DARK_ASSETS.items():
             save_png(dark, target / name, size)
-        resized(light, 48).save(target / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
+        resized(light, 48).save(
+            target / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)]
+        )
         (target / "favicon.svg").write_text(svg_wrapper(light))
 
     save_png(light, ROOT / "static" / "favicon.png", 500)

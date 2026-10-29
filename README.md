@@ -13,11 +13,11 @@
 
 ## What is different from Open WebUI 0.6.5
 
-| | |
-| --- | --- |
-| 🎨 **Own branding** | Every logo, favicon and splash screen is replaced. One script regenerates them all from any image. |
-| ⏰ **Scheduled automations** | Let a model run a prompt for you on a schedule: "every weekday at 8:00, summarize the news". |
-| 📜 **Permissive license** | Based on the last BSD-3-Clause release of Open WebUI. |
+|                              |                                                                                                    |
+| ---------------------------- | -------------------------------------------------------------------------------------------------- |
+| 🎨 **Own branding**          | Every logo, favicon and splash screen is replaced. One script regenerates them all from any image. |
+| ⏰ **Scheduled automations** | Let a model run a prompt for you on a schedule: "every weekday at 8:00, summarize the news".       |
+| 📜 **Permissive license**    | Based on the last BSD-3-Clause release of Open WebUI.                                              |
 
 Everything else (chat, Ollama and OpenAI-compatible models, RAG, tools, web search, channels, …) works as in
 Open WebUI 0.6.5. See the [original README](docs/UPSTREAM_README.md) for that feature list.
@@ -59,30 +59,30 @@ status of each run and a link to its chat.
 
 Admins can turn automations off for a group: **Admin → Users → Groups → Permissions → Features → Automations**.
 
-| Environment variable | Default | Meaning |
-| --- | --- | --- |
-| `ENABLE_AUTOMATIONS` | `True` | Turn the feature and scheduler on or off |
-| `USER_PERMISSIONS_FEATURES_AUTOMATIONS` | `True` | Default permission for normal users |
-| `AUTOMATION_MAX_COUNT` | `20` | Max automations per non-admin user |
-| `AUTOMATION_MIN_INTERVAL` | `300` | Shortest gap between two runs, in seconds |
-| `AUTOMATION_POLL_INTERVAL` | `30` | How often the scheduler checks, in seconds |
-| `AUTOMATION_MAX_CONCURRENT` | `3` | How many runs may use models at the same time |
+| Environment variable                    | Default | Meaning                                       |
+| --------------------------------------- | ------- | --------------------------------------------- |
+| `ENABLE_AUTOMATIONS`                    | `True`  | Turn the feature and scheduler on or off      |
+| `USER_PERMISSIONS_FEATURES_AUTOMATIONS` | `True`  | Default permission for normal users           |
+| `AUTOMATION_MAX_COUNT`                  | `20`    | Max automations per non-admin user            |
+| `AUTOMATION_MIN_INTERVAL`               | `300`   | Shortest gap between two runs, in seconds     |
+| `AUTOMATION_POLL_INTERVAL`              | `30`    | How often the scheduler checks, in seconds    |
+| `AUTOMATION_MAX_CONCURRENT`             | `3`     | How many runs may use models at the same time |
 
 ### API
 
 All endpoints are under `/api/v1/automations` and need a signed-in user.
 
-| Method | Path | What it does |
-| --- | --- | --- |
-| `GET` | `/` | List your automations, with each one's last run |
-| `POST` | `/create` | Create one |
-| `POST` | `/preview` | Check a schedule and get its next run times |
-| `GET` | `/{id}` | Get one |
-| `GET` | `/{id}/runs` | Run history (last 20) |
-| `POST` | `/{id}/update` | Change one |
-| `POST` | `/{id}/toggle` | Pause or resume |
-| `POST` | `/{id}/run` | Run now, in the background |
-| `DELETE` | `/{id}/delete` | Delete it and its history (chats are kept) |
+| Method   | Path           | What it does                                    |
+| -------- | -------------- | ----------------------------------------------- |
+| `GET`    | `/`            | List your automations, with each one's last run |
+| `POST`   | `/create`      | Create one                                      |
+| `POST`   | `/preview`     | Check a schedule and get its next run times     |
+| `GET`    | `/{id}`        | Get one                                         |
+| `GET`    | `/{id}/runs`   | Run history (last 20)                           |
+| `POST`   | `/{id}/update` | Change one                                      |
+| `POST`   | `/{id}/toggle` | Pause or resume                                 |
+| `POST`   | `/{id}/run`    | Run now, in the background                      |
+| `DELETE` | `/{id}/delete` | Delete it and its history (chats are kept)      |
 
 ## Run it
 

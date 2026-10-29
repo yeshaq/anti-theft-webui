@@ -262,7 +262,9 @@ async def _generate(
 ) -> str:
     options = automation.options or {}
     model_info = Models.get_model_by_id(automation.model_id)
-    tool_ids = (model_info.meta.model_dump().get("toolIds") if model_info else None) or None
+    tool_ids = (
+        model_info.meta.model_dump().get("toolIds") if model_info else None
+    ) or None
     features = {"web_search": bool(options.get("web_search"))}
 
     messages = [{"role": "user", "content": automation.prompt}]
@@ -322,7 +324,9 @@ async def _generate(
                 else str(error)
             )
         choices = response.get("choices") or []
-        content = (choices[0].get("message") or {}).get("content", "") if choices else ""
+        content = (
+            (choices[0].get("message") or {}).get("content", "") if choices else ""
+        )
     else:
         raise Exception(f"Unexpected response from model: {type(response).__name__}")
 
